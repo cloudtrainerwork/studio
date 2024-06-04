@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h1 id="lab-guide">Lab Guide</h1>
+<h2 id="ai-studio-copilot">AI Studio Copilot</h2>
+<<<<<<< HEAD
+<h3 id="accessing-microsoft-azure">Accessing Microsoft Azure</h3>
+<p>Launch another Chrome tab on your desktop and navigate to the below
+URL. Click <strong>Sign in</strong> in the upper right-hand corner. Your
+Azure Credentials are available by clicking the <strong>Cloud</strong>
+icon at the top of the Lab Player.</p>
+<figure>
+<img src="images/signing.png" alt="signing" />
+<figcaption aria-hidden="true">signing</figcaption>
+</figure>
+<pre><code>https://ai.azure.com/</code></pre>
+<h3 id="create-a-new-project">Create a new project</h3>
+<ol type="1">
+<li><p>Click <strong>Build your own copilot</strong> to create the
+project.</p>
+<figure>
+<img src="images/buildcopoilot.png" alt="buildcopoilot" />
+<figcaption aria-hidden="true">buildcopoilot</figcaption>
+</figure></li>
+<li><p>Click on <strong>Create a new project</strong> and click
+<strong>Select</strong></p>
+<figure>
+<img src="images/creatnew.png" alt="creatnew" />
+<figcaption aria-hidden="true">creatnew</figcaption>
+</figure></li>
+<li><p>In the <strong>Product details</strong> popup change the
+<strong>Project name</strong> but leave the pre-generated characters at
+the end.</p>
+<figure>
+<img src="images/projectdetails.png" alt="projectdetails" />
+<figcaption aria-hidden="true">projectdetails</figcaption>
+</figure></li>
+<li><p>In the <strong>Hub</strong> section click on the text
+<strong>Create a new hub</strong></p>
+=======
+<h3 id="creating-an-azure-open-ai-resource-in-the-azure-portal">Creating
+an Azure Open AI Resource in the Azure Portal</h3>
+<!-- 
+1. On your local computer, launch an incognito Chrome window and navigate to the below URL(s). Sign in using the credentials located in the **Lab Environment** tab of **labs.opsgility.com**. 
+
+    ```
+    https://portal.azure.com 
+    ```
+-->
+<ol type="1">
+<li><p>From inside the lab virtual machine, launch Chrome from the task
+bar.</p>
+<p><img src="images/start-chrome.png" /></p></li>
+<li><p>Navigate to the Azure portal.</p>
+<pre><code>https://portal.azure.com </code></pre></li>
+<li><p>When prompted, login with your Azure credentials displayed after
+you click the cloud icon.</p>
+<p><img src="images/credentials.png" /></p></li>
+<li><p>Click <strong>Create a Resource</strong> then search for and
+select <strong>Azure OpenAI</strong>. Click <strong>Create</strong>.</p>
+<p><img src="images/CreateResource.png" /></p>
+<p><img src="images/az-open-ai.png" /></p></li>
+<li><p>Create the OpenAI resource by first entering the following
+information. Click <strong>Next</strong> three times then click
+<strong>Create</strong>.</p>
+<ul>
+<li><p>Resource group: <strong>Click <em>Create new</em> then enter
+<em>OpenAIRG</em> and click <em>OK</em></strong></p></li>
+<li><p>Name: <strong>Enter a unique name for your Open AI
+Resource</strong></p></li>
+<li><p>Region: <strong>East US</strong></p></li>
+<li><p>Pricing Tier: <strong>Standard S0</strong></p></li>
+</ul>
+<p><img src="images/OpenAIResourceCreate.png" /></p></li>
+</ol>
+<h3 id="create-an-azure-search-instance-in-the-azure-portal">Create an
+Azure Search Instance in the Azure Portal</h3>
+<ol type="1">
+<li><p>Click <strong>Microsoft Azure</strong> to return to the Azure
+portal’s home page. Click <strong>Create a Resource</strong> then search
+for and select <strong>Azure AI Search</strong> and click
+<strong>Create</strong>.</p>
+<p><img src="images/CreateResource2.png" /></p>
+<p><img src="images/SearchAzAISearch.png" /></p></li>
+<li><p>Enter the following information then click <strong>Next:
+Scale</strong>. Click <strong>Review + Create</strong> then
+<strong>Create</strong>.</p>
+<ul>
+<li><p>Resource Group: <strong>OpenAIRG</strong></p></li>
+<li><p>Service Name: <strong>Enter a unique name for your Azure AI
+Search Resource</strong></p></li>
+<li><p>Location: <strong>East US</strong></p></li>
+<li><p>Pricing Tier: <strong>Standard</strong></p></li>
+</ul>
+<p><img src="images/AzAISearchCreate.png" /></p></li>
+</ol>
+<h3
+id="create-a-new-ai-studio-project-using-the-azure-ai-studio-portal">Create
+a new AI Studio project using the Azure AI Studio Portal</h3>
+<ol type="1">
+<li><p>Navigate to the <strong>AI Studio Portal</strong> in a new
+browser tab.</p>
+<pre><code>https://ai.azure.com/</code></pre></li>
+<li><p>Click <strong>Sign in</strong> on the top right. Sign in using
+your Azure credentials located in the <strong>Lab Environment</strong>
+tab if prompted.</p>
+<p><img src="images/signing.png" /></p></li>
+<li><p>On the right navigation, <strong>click + New
+Project</strong>.</p>
+<p><img src="images/plus-new-project.png" /></p></li>
+<li><p>In the <strong>Project details</strong> popup change the
+<strong>Project name</strong> to <strong>democopilot</strong>, but leave
+the pre-generated characters at the end.</p>
+<p><img src="images/projectdetails.png" /></p></li>
+<li><p>In the <strong>Hub</strong> section, click <strong>Create a new
+hub</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/newhub.png" alt="newhub" />
+<figcaption aria-hidden="true">newhub</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the replacement popup change the <strong>Hub Name</strong>
+default to include your name.Leave the pre-generated characters at the
+end.</p>
+<ul>
+<li><strong>Subscription</strong>: Make sure your subscription is
+set</li>
+<li><strong>Resource group</strong>: Can be an existing or select the
+text to</li>
+<li><strong>Create a new resource group</strong></li>
+<li><strong>Location</strong>: Set to <strong>East US</strong></li>
+<li><strong>Connect Azure AI Services or Azure OpenAI</strong>: leave
+default</li>
+<li><strong>Connect Azure AI Search</strong>: leave default</li>
+<li>Click <strong>Next</strong></li>
+=======
+<li><p>Enter the following information then click
+<strong>Next</strong>.</p>
+<ul>
+<li><p>Subscription: <strong>Azure Subscription 1</strong></p></li>
+<li><p>Resource group: <strong>OpenAIRG</strong></p></li>
+<li><p>Location: <strong>East US</strong></p></li>
+<li><p>Connect Azure AI Services or Azure OpenAI: <strong>Select the
+<em>Azure OpenAI Resource</em> you created earlier in the
+lab</strong></p></li>
+<li><p>Connect Azure AI Search: <strong>Select the <em>Azure AI Search
+Resource</em> you created earlier in the lab</strong></p></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ul>
+<figure>
+<img src="images/hubsetup.png" alt="hubsetup" />
+<figcaption aria-hidden="true">hubsetup</figcaption>
+</figure></li>
+<li><p>In the <strong>Deploy a model to use the chat playground</strong>
+<<<<<<< HEAD
+step leave the defaults. Then click <strong>Next</strong></p>
+=======
+step, leave the default values, then click <strong>Next</strong></p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/models1.png" alt="models 1" />
+<figcaption aria-hidden="true">models 1</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the final step click on <strong>Create a project</strong></p>
+=======
+<li><p>In the final step, click <strong>Create a project</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/createaproject.png" alt="createaproject" />
+<figcaption aria-hidden="true">createaproject</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the <strong>Review and finish</strong> step watch all the
+services get spun up. Wait for green circles on each resource.</p>
+<figure>
+<img src="images/review.png" alt="review" />
+<figcaption aria-hidden="true">review</figcaption>
+</figure></li>
+<li><p>After the deployment is completed you will be redirected to the
+<strong>Playground</strong>. Make sure you change the width of the
+browser to ensure you see four different columns.</p>
+<figure>
+<img src="images/4columns.png" alt="4columns" />
+<figcaption aria-hidden="true">4columns</figcaption>
+</figure></li>
+<li><p>In the left-hand navigation click on <strong>Project
+settings</strong></p>
+<figure>
+<img src="images/projectsettings.png" alt="projectsettings" />
+<figcaption aria-hidden="true">projectsettings</figcaption>
+</figure></li>
+<li><p>In the <strong>Project settings</strong> you can view the
+following:</p>
+<ul>
+<li><strong>Connected resources</strong></li>
+<li><strong>Project properties</strong></li>
+<li><strong>Computes</strong></li>
+<li><strong>Project members</strong></li>
+<li><strong>Prompt flow runtimes</strong></li>
+<li><strong>Total cost</strong></li>
+</ul>
+<figure>
+<img src="images/settings.png" alt="settings" />
+<figcaption aria-hidden="true">settings</figcaption>
+</figure></li>
+<li><p>Click back on the <strong>Playground</strong></p></li>
+<li><p>Click on the <strong>Add your data</strong> tab. Then click the
+<strong>Add a new data source</strong></p>
+<figure>
+<img src="images/adddata.png" alt="adddata" />
+<figcaption aria-hidden="true">adddata</figcaption>
+</figure></li>
+<li><p>Download these files to upload. Please <strong>extract</strong>
+first. https://tinyurl.com/yz5tucbk</p></li>
+<li><p>From the <strong>Data source</strong> dropdown select
+<strong>Upload files</strong></p>
+<figure>
+<img src="images/upload.png" alt="upload" />
+<figcaption aria-hidden="true">upload</figcaption>
+</figure></li>
+<li><p>The interface updates and click the <strong>Upload</strong>
+button and choose <strong>Upload files</strong></p>
+<figure>
+<img src="images/uoploadfiles.png" alt="uoploadfiles" />
+<figcaption aria-hidden="true">uoploadfiles</figcaption>
+</figure></li>
+<li><p>Once the three files are uploaded your screen should resemble the
+following. Then click <strong>Next</strong></p>
+<figure>
+<img src="images/filesuploaded.png" alt="filesuploaded" />
+<figcaption aria-hidden="true">filesuploaded</figcaption>
+</figure></li>
+<li><p>We need to create a <strong>Search service</strong> so click the
+text that says <strong>Create a new Azure AI Search resource</strong>.
+This opens a new tab.</p>
+<figure>
+<img src="images/newsearch.png" alt="newsearch" />
+<figcaption aria-hidden="true">newsearch</figcaption>
+</figure></li>
+<li><p>Make sure to choose the same <strong>Resource group</strong>,
+<strong>Location</strong> as the other services you previously created.
+Also change the <strong>Pricing tier</strong> option to
+<strong>Basic</strong>. Then click <strong>Review + create</strong>. And
+finally <strong>Create</strong></p>
+<figure>
+<img src="images/basicsearch.png" alt="basicsearch" />
+<figcaption aria-hidden="true">basicsearch</figcaption>
+</figure></li>
+<li><p>Once you get confirmation that the deployment is complete switch
+back to the previous tab. It takes a while before it is available in the
+dropdown.</p>
+<figure>
+<img src="images/searchcreated.png" alt="searchcreated" />
+<figcaption aria-hidden="true">searchcreated</figcaption>
+</figure></li>
+<li><p>In the breadcrumbs click the link after the
+<strong>Build</strong> link to get to the properties page</p>
+<figure>
+<img src="images/secondlink.png" alt="secondlink" />
+<figcaption aria-hidden="true">secondlink</figcaption>
+</figure></li>
+<li><p>In the <strong>Connected resources</strong> section click on the
+<strong>+ New connection</strong></p>
+<figure>
+<img src="images/newconnection.png" alt="newconnection" />
+<figcaption aria-hidden="true">newconnection</figcaption>
+</figure></li>
+<li><p>In the popup select <strong>Azure AI Search</strong></p>
+<figure>
+<img src="images/connection2.png" alt="connection 2" />
+<figcaption aria-hidden="true">connection 2</figcaption>
+</figure></li>
+<li><p>Select the newly created <strong>Search service</strong> by
+clicking the <strong>Add connection</strong> button. Then click
+<strong>Close</strong></p>
+<figure>
+<img src="images/addconnection.png" alt="addconnection" />
+<figcaption aria-hidden="true">addconnection</figcaption>
+</figure></li>
+<li><p>Return to the project listed under the <strong>Projects</strong>
+section</p>
+<figure>
+<img src="images/projects2.png" alt="projects 2" />
+<figcaption aria-hidden="true">projects 2</figcaption>
+</figure></li>
+<li><p>Then click back on <strong>Playground</strong>.</p></li>
+</ol>
+<p><strong>Note:</strong> The next steps not a mistake. Just follow as
+written….</p>
+<ol type="1">
+<li><p>Click on the <strong>Add your data</strong> tab. Then click the
+<strong>Add a new data source</strong></p>
+=======
+</ol>
+<!-- TODO update -->
+<ol type="1">
+<li><p>In the <strong>Review and finish</strong> step, watch all the
+resources create. Wait for green circles on each resource.</p>
+<p><img src="images/review-and-finish.png" /></p></li>
+<li><p>Click <strong>Model Catalog</strong> on the left navigation.</p>
+<figure>
+<img src="images/model-catalog.png" alt="Playground Return" />
+<figcaption aria-hidden="true">Playground Return</figcaption>
+</figure></li>
+<li><p>Search for <strong>gpt-35-turbo</strong> and select
+<strong>gpt-35-turbO</strong> from the results.</p>
+<p><img src="images/gpt-35-turbo.png" /></p></li>
+<li><p>On the next screen, click <strong>Deploy</strong>.</p>
+<p><img src="images/deploy-gpt-35-turbo.png" /></p></li>
+<li><p>Accept the default values, and scroll to the bottom and click
+<strong>Deploy</strong>.</p>
+<p><img src="images/deploy-gpt-35-turbo-defaults.png" /></p></li>
+<li><p>Download and extract these files to your local device.</p>
+<pre><code>https://tinyurl.com/yz5tucbk</code></pre></li>
+<li><p>Back in the Azure AI Studio portal, on the left navigation, click
+<strong>Chat</strong>.</p>
+<p><img src="images/project-playground-chat.png" /></p></li>
+<li><p>Click on the <strong>Add your data</strong> tab.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/adddata.png" alt="adddata" />
+<figcaption aria-hidden="true">adddata</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>From the <strong>Data source</strong> dropdown select
+=======
+<li><p>Then click <strong>+ Add a new data source</strong></p>
+<p><img src="images/add-new-data-source.png" /></p></li>
+<li><p>On the <strong>Data source</strong> dropdown, select
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<strong>Upload files</strong></p>
+<figure>
+<img src="images/upload.png" alt="upload" />
+<figcaption aria-hidden="true">upload</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>The interface updates and click the <strong>Upload</strong>
+button and choose <strong>Upload files</strong></p>
+=======
+<li><p>Click <strong>Upload</strong> then select <strong>Upload
+files</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/uoploadfiles.png" alt="uoploadfiles" />
+<figcaption aria-hidden="true">uoploadfiles</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Once the three files are uploaded your screen should resemble the
+following. Then click <strong>Next</strong></p>
+=======
+<li><p>Select the files you just downloaded and extracted.</p>
+<figure>
+<img src="images/SelectFiles.png" alt="Select files" />
+<figcaption aria-hidden="true">Select files</figcaption>
+</figure></li>
+<li><p>Once the three files are uploaded your page should resemble the
+following. Click <strong>Next</strong></p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/filesuploaded.png" alt="filesuploaded" />
+<figcaption aria-hidden="true">filesuploaded</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Select the <strong>Search service</strong> you connected earlier
+from the dropdown. Leave the defaul <strong>Index name</strong> and
+=======
+<li><p>In the <strong>Select Azure AI Search Service</strong> dropdown,
+select the <strong>Azure AI Search Resource</strong> you created and
+connected earlier. Leave the default <strong>Index name</strong> and
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+click <strong>Next</strong></p>
+<figure>
+<img src="images/searchdropdown.png" alt="searchdropdown" />
+<figcaption aria-hidden="true">searchdropdown</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Click the dropdown for the <strong>Azure OpenAI resource</strong>
+and choose the one previously created then click
+<strong>Next</strong></p>
+=======
+<li><p>In the <strong>Select an embedded model</strong> dropdown, select
+the <strong>Azure OpenAI Resource</strong> you created earlier then
+click <strong>Next</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/openai1.png" alt="openai 1" />
+<figcaption aria-hidden="true">openai 1</figcaption>
+</figure></li>
+<li><p>On the final step of the wizard click <strong>Create</strong>.
+<<<<<<< HEAD
+This will take a while.</p>
+=======
+This will take a while. Important - do not navigate away from the
+screen.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/create.png" alt="create" />
+<figcaption aria-hidden="true">create</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>You will see several progression steps</p>
+=======
+<li><p>You will see several progression steps:</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/progression.png" alt="progression" />
+<figcaption aria-hidden="true">progression</figcaption>
+</figure></li>
+<li><p>When the process is created it will resemble the following:</p>
+<figure>
+<img src="images/indexready.png" alt="indexready" />
+<figcaption aria-hidden="true">indexready</figcaption>
+</figure></li>
+<li><p>Change the <strong>Search type</strong> dropdown to
+<strong>Keyword</strong></p>
+<figure>
+<img src="images/keyword.png" alt="keyword" />
+<figcaption aria-hidden="true">keyword</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Search for the word <strong>dubai</strong> and click the
+<strong>Submit</strong> button</p>
+=======
+<li><p>In the middle <strong>Chat</strong> pane, enter the prompt
+<strong>tell me about hotels in Dubai</strong> and click the
+<strong>Submit</strong> button.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/dubai.png" alt="dubai" />
+<figcaption aria-hidden="true">dubai</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>The results…</p>
+=======
+<li><p>The results should resemble the following:</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/results.png" alt="results" />
+<figcaption aria-hidden="true">results</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Click on <strong>Prompt flow</strong></p>
+=======
+<li><p>Click <strong>Prompt flow</strong> towards the top of the
+page.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/prompt.png" alt="prompt" />
+<figcaption aria-hidden="true">prompt</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Accept the defaults and click <strong>Open</strong></p>
+=======
+<li><p>At the prompt, click <strong>Open</strong></p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/promptflow1.png" alt="promptflow 1" />
+<figcaption aria-hidden="true">promptflow 1</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Flow output</p>
+=======
+<li><p>Here is the flow output.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/flowoutput.png" alt="flowoutput" />
+<figcaption aria-hidden="true">flowoutput</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the <strong>Runtime</strong> section choose the dropdown and
+click <strong>Start</strong>. Give it some time to spinup a runtime. It
+will keep spinning until it is ready.</p>
+<figure>
+<img src="images/runtime.png" alt="runtime" />
+<figcaption aria-hidden="true">runtime</figcaption>
+</figure></li>
+<li><p>In the upper right-hand corner click on the <strong>Chat</strong>
+button</p>
+=======
+<li><p>In the <strong>Runtime</strong> dropdown towards the top of the
+page, select <strong>Start</strong>. Wait a few minutes for the run time
+to be completed.</p>
+<figure>
+<img src="images/runtime.png" alt="runtime" />
+<figcaption aria-hidden="true">runtime</figcaption>
+</figure>
+<figure>
+<img src="images/runtimecomplete.png" alt="runtime complete" />
+<figcaption aria-hidden="true">runtime complete</figcaption>
+</figure></li>
+<li><p>Click <strong>Chat</strong> on the upper right corner of the
+pane.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/chat.png" alt="chat" />
+<figcaption aria-hidden="true">chat</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Search for <strong>dubai</strong> again and review the
+results</p>
+=======
+<li><p>Enter <strong>dubai</strong> into the chat pane that appears and
+view the results</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/promptanswer.png" alt="promptanswer" />
+<figcaption aria-hidden="true">promptanswer</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Lets try a real prompt <strong>are there any good hotels in
+Dubai?</strong></p></li>
+<li><p>CONGRATULATIONS!!!</p></li>
+</ol>
+<p>You are finished with this exercise. No need to delete anything at
+this point.</p>
+=======
+<li><p>Enter <strong>Are there any good hotels in Dubai?</strong> into
+the chat pane and view the results.</p>
+<figure>
+<img src="images/promptanswer2.png" alt="promptanswer2" />
+<figcaption aria-hidden="true">promptanswer2</figcaption>
+</figure></li>
+<li><p>Click <strong>Save</strong> at the top of the page and then click
+the <strong>All Hubs</strong> link in the navigation.</p>
+<p><img src="images/all-hubs-navigation.png" /></p></li>
+<li><p>You are finished with this exercise. You can continue to exercise
+2.</p></li>
+</ol>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</body>
+</html>

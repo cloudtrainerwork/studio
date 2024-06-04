@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-4--ai-studio-explore">Exercise 4- AI Studio
+Explore</h2>
+<h3 id="model-benchmarks">Model benchmarks</h3>
+<ol type="1">
+<<<<<<< HEAD
+<li><p>Click on the <strong>Explore</strong> tab in the navigation</p>
+<figure>
+<img src="images/explore.png" alt="explore" />
+<figcaption aria-hidden="true">explore</figcaption>
+</figure></li>
+<li><p>Click on the <strong>Model benchmarks</strong> link in the left
+hand navigation</p>
+=======
+<li><p>Click <strong>Model benchmarks</strong> on the left
+navigation.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/benchmarks.png" alt="benchmarks" />
+<figcaption aria-hidden="true">benchmarks</figcaption>
+</figure></li>
+<li><p>Scroll down in the middle section to look at the <strong>Model
+accuracy</strong> section. You will notice that the
+<strong>gpt-4-turbo-2024-04-09</strong> is the most accurate model but
+all of the gpt-4 models are fairly close.</p>
+<figure>
+<img src="images/accuracty.png" alt="accuracty" />
+<figcaption aria-hidden="true">accuracty</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Using your mouse mouse-over the top blue squares till you see the
+<strong>openbookqa</strong> dataset highlight</p>
+=======
+<li><p>Using your mous, mouse-over the top blue squares until you see
+the <strong>openbookqa</strong> dataset.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/openbook.png" alt="openbook" />
+<figcaption aria-hidden="true">openbook</figcaption>
+</figure></li>
+<li><p>In the far right pain you can filter on the following:</p>
+<ul>
+<<<<<<< HEAD
+<li>Tasks</li>
+<li>Collections</li>
+<li>Models</li>
+<li>Inference tasks</li>
+<li>Fine-tuning tasks</li>
+<li>Licenses</li>
+</ul></li>
+=======
+<li><p>Tasks</p></li>
+<li><p>Collections</p></li>
+<li><p>Models</p></li>
+<li><p>Inference tasks</p></li>
+<li><p>Fine-tuning tasks</p></li>
+<li><p>Licenses</p></li>
+</ul>
+<figure>
+<img src="images/Filters.png" alt="Filter" />
+<figcaption aria-hidden="true">Filter</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+</body>
+</html>

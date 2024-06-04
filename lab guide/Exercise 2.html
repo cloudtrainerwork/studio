@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-2--ai-studio-ai-hubs">Exercise 2- AI Studio AI
+Hubs</h2>
+<h3 id="accessing-azure-ai-hubs">Accessing Azure AI Hubs</h3>
+<<<<<<< HEAD
+<p>Launch another Chrome tab on your desktop and navigate to the below
+URL. Click <strong>Sign in</strong> in the upper right-hand corner. Your
+Azure Credentials are available by clicking the <strong>Cloud</strong>
+icon at the top of the Lab Player.</p>
+<figure>
+<img src="images/signing.png" alt="signing" />
+<figcaption aria-hidden="true">signing</figcaption>
+</figure>
+<pre><code>https://ai.azure.com/</code></pre>
+<p>or click the <strong>Home</strong> tab button<br />
+<img src="images/home.png" alt="home" /></p>
+<ol type="1">
+<li><p>Lets open the <strong>Hub</strong> from the previous
+exercise.</p></li>
+<li><p>Click on the <strong>Manage</strong> tab</p>
+<figure>
+<img src="images/manage.png" alt="manage" />
+<figcaption aria-hidden="true">manage</figcaption>
+</figure></li>
+<li><p>Click on your previously created <strong>Hub</strong>. Your name
+will be different.</p>
+<figure>
+<img src="images/hubname.png" alt="hubname" />
+<figcaption aria-hidden="true">hubname</figcaption>
+</figure></li>
+<li><p>The <strong>Hub</strong> settings page</p>
+<figure>
+<img src="images/hubsettings.png" alt="hubsettings" />
+<figcaption aria-hidden="true">hubsettings</figcaption>
+</figure></li>
+<li><p>Click on the <strong>+ New member</strong> button in the bottom
+right-hand corner</p>
+=======
+<ol type="1">
+<li><p>Click on your previously created <strong>Hub</strong>.</p>
+<figure>
+<img src="images/hubname.png" alt="hubname" />
+<figcaption aria-hidden="true">hubname</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note:</strong> The name of your hub will be different than
+what is in the screenshot.</p>
+</blockquote></li>
+<li><p>On the <strong>Hub</strong> settings page that appears, click the
+<strong>+ New member</strong> button in the bottom right corner of the
+page.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/permissions1.png" alt="permissions 1" />
+<figcaption aria-hidden="true">permissions 1</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>This account doesnt have additional users to add but expand the
+dropdown to see the different <strong>Roles</strong> available.</p>
+=======
+<li><p>This account doesnt have additional users to add. Expand the
+<strong>Role</strong> dropdown to see the different roles available.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/airoles.png" alt="airoles" />
+<figcaption aria-hidden="true">airoles</figcaption>
+</figure></li>
+<li><p>This is an explanation of the roles available.</p>
+<table>
+<thead>
+<tr>
+<th>
+<p>Role</p>
+</th>
+<th>
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>Owner</p>
+</td>
+<td>
+<p>Full access to the Azure AI hub resource, including the ability to
+manage and create new Azure AI hub resources and assign permissions.
+This role is automatically assigned to the Azure AI hub resource
+creator</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Contributor</p>
+</td>
+<td>
+<p>User has full access to the Azure AI hub resource, including the
+ability to create new Azure AI hub resources, but isn’t able to manage
+Azure AI hub resource permissions on the existing resource.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Azure AI Developer</p>
+</td>
+<td>
+<p>Perform all actions except create new Azure AI hub resources and
+manage the Azure AI hub resource permissions. For example, users can
+create projects, compute, and connections. Users can assign permissions
+within their project. Users can interact with existing Azure AI
+resources such as Azure OpenAI, Azure AI Search, and Azure AI
+services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Reader</p>
+</td>
+<td>
+<p>Read only access to the Azure AI hub resource. This role is
+automatically assigned to all project members within the Azure AI hub
+resource.</p>
+</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Click the <strong>Cancel</strong> button on the <strong>Add
+<<<<<<< HEAD
+resource members</strong> popup</p></li>
+<li><p>Click on the <strong>Compute instances</strong> link in the side
+navigation. You can use <strong>Compute instances</strong> to use in</p>
+<ul>
+<li>Prompt flows</li>
+<li>Indexes</li>
+<li>Visual Studio Code</li>
+</ul></li>
+<li><p>Click on the <strong>New</strong> button</p>
+=======
+resource members</strong> dialog.</p>
+<figure>
+<img src="images/CancelAddMember.png" alt="Cancel add member" />
+<figcaption aria-hidden="true">Cancel add member</figcaption>
+</figure></li>
+<li><p>Click <strong>Compute instances</strong> on the left navigation.
+You can use <strong>Compute instances</strong> in the following:</p>
+<ul>
+<li><p>Prompt flows</p></li>
+<li><p>Indexes</p></li>
+<li><p>Visual Studio Code</p></li>
+</ul>
+<figure>
+<img src="images/ComputeInstances.png" alt="Cancel add member" />
+<figcaption aria-hidden="true">Cancel add member</figcaption>
+</figure></li>
+<li><p>Click the <strong>+ New</strong> button.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/newcompute.png" alt="newcompute" />
+<figcaption aria-hidden="true">newcompute</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the popup adjust the <strong>Virtual machine size</strong> to
+<strong>Standard_DS11_v2</strong> then click <strong>Next</strong></p>
+=======
+<li><p>In the <strong>Create Compute Instance</strong> dialog, enter a
+unique name for the <strong>Compute name</strong> then select any of the
+virtual machines under <strong>Virtual machine size</strong>. Click
+<strong>Next</strong> (do <strong>NOT</strong> create).</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/computercreate.png" alt="computercreate" />
+<figcaption aria-hidden="true">computercreate</figcaption>
+</figure></li>
+<li><p>Leave the default settings but this is where we setup the
+schedule for the VM. By default it will shutdown after 60 minutes of
+<<<<<<< HEAD
+inactivity. Let’s add a late night schedule.</p></li>
+<li><p>Click on the <strong>Add schedule</strong> button</p>
+=======
+inactivity. Let’s add a late night schedule. Click the <strong>Add
+schedule</strong> button</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/addschedule.png" alt="addschedule" />
+<figcaption aria-hidden="true">addschedule</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Change the radio button the <strong>Start compute
+instance</strong> then click the <strong>Add to schedule</strong>
+button</p>
+=======
+<li><p>Select <strong>Start compute instance</strong> then click the
+<strong>Add schedule</strong> button</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/startcompute.png" alt="startcompute" />
+<figcaption aria-hidden="true">startcompute</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the <strong>Stop compute instance</strong> section change the
+=======
+<li><p>In the <strong>Shutdown every…</strong> section change the
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<strong>Shutdown time</strong> to <strong>11:00PM</strong> then click
+<strong>Next</strong>.</p>
+<figure>
+<img src="images/11pm.png" alt="11pm" />
+<figcaption aria-hidden="true">11pm</figcaption>
+</figure></li>
+<li><p>In the <strong>Security</strong> section of this wizard you can
+<<<<<<< HEAD
+configure</p></li>
+</ol>
+<ul>
+<li><p>User assignment</p></li>
+<li><p>Assigned identity</p></li>
+<li><p>Enabling SSH access</p>
+<p>We will be leaving the default settings and click
+<strong>Next</strong></p>
+=======
+configure the following but we will leave the default settings. Click
+<strong>Next</strong>.</p>
+<ul>
+<li><p>User assignment</p></li>
+<li><p>Assigned identity</p></li>
+<li><p>Enabling SSH access</p></li>
+</ul>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/enablessh.png" alt="enablessh" />
+<figcaption aria-hidden="true">enablessh</figcaption>
+</figure></li>
+<<<<<<< HEAD
+</ul>
+<ol type="1">
+=======
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<li><p>Leave the default settings for the <strong>Tags</strong> section
+and click <strong>Next</strong></p></li>
+<li><p>We arent going to create a <strong>Compute instance</strong> that
+is dedicated for this so click the <strong>Cancel</strong> button to
+<<<<<<< HEAD
+close the wizard. Then click the <strong>Leave</strong> popup
+button.</p></li>
+<li><p>Click on the <strong>Connected resources</strong> button in the
+side navigation</p></li>
+<li><p>Here are all the resources that are currently available. We
+walked through the steps to add a new <strong>Connected
+resource</strong> in the first exercise.</p></li>
+<li><p>In the navigation click on the <strong>Policies</strong>
+button</p></li>
+<li><p>Click on the <strong>Add policy</strong> button</p>
+<figure>
+<img src="images/addpolicy.png" alt="addpolicy" />
+<figcaption aria-hidden="true">addpolicy</figcaption>
+</figure></li>
+<li><p>Expand the first dropdown to see the the available policy
+options. Select the policy that says <strong>Compute instances should
+have idle shutdown turned on</strong></p>
+<figure>
+<img src="images/policy1.png" alt="policy 1" />
+<figcaption aria-hidden="true">policy 1</figcaption>
+</figure></li>
+<li><p>In the <strong>Effect</strong> section expand the options and
+leave the default at <strong>Audit</strong></p>
+<figure>
+<img src="images/auditpolicy.png" alt="auditpolicy" />
+<figcaption aria-hidden="true">auditpolicy</figcaption>
+</figure></li>
+<li><p>Click the <strong>Cancel</strong> button to stop creating a new
+policy</p></li>
+<li><p>Click on the <strong>Billing</strong> link in the side
+navigation</p></li>
+<li><p>Click on the <strong>View cost for resources</strong> button to
+open a new tab.</p>
+<figure>
+<img src="images/viewcost.png" alt="viewcost" />
+<figcaption aria-hidden="true">viewcost</figcaption>
+</figure></li>
+<li><p>By default the <strong>Cost analysis</strong> is broken down by
+<strong>Resource Group</strong> so it is very important to use dedicated
+<strong>Resource Groups</strong> for each <strong>Hub</strong></p>
+<figure>
+<img src="images/cost.png" alt="cost" />
+<figcaption aria-hidden="true">cost</figcaption>
+</figure></li>
+</ol>
+=======
+close the wizard. Then click <strong>Leave</strong> when prompted.</p>
+<p><img src="images/CancelComputeInstance.png" /></p></li>
+<li><p>Click <strong>Connected resources</strong> on the left
+navigation. Here are all the resources that are currently available. We
+walked through the steps to add a new <strong>Connected
+resource</strong> in the first exercise.</p>
+<figure>
+<img src="images/ConnectedResources.png" alt="enablessh" />
+<figcaption aria-hidden="true">enablessh</figcaption>
+</figure></li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Steps to view policy and billing information
+are not included due to changes in policy management functionality as
+well as being unable to display CSP subscription pricing.</p>
+</blockquote>
+<!-- 1. In the navigation click on the **Policies** button
+
+1.  Click on the **Add policy** button 
+
+    ![addpolicy](images/addpolicy.png)
+    
+1. Expand the first dropdown to see the the available policy options. Select the policy that says **Compute instances should have idle shutdown turned on**
+
+    ![policy 1](images/policy1.png)
+    
+1. In the **Effect** section expand the options and leave the default at **Audit**
+
+    ![auditpolicy](images/auditpolicy.png)
+    
+1. Click the **Cancel** button to stop creating a new policy
+
+1. Click on the **Billing** link in the side navigation
+
+1. Click on the **View cost for resources**  button to open a new tab. 
+
+    ![viewcost](images/viewcost.png)
+    
+1. By default the **Cost analysis** is broken down by **Resource Group** so it is very important to use dedicated **Resource Groups** for each **Hub**
+
+    ![cost](images/cost.png) -->
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</body>
+</html>

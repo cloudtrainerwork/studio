@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-6--ai-studio-build">Exercise 6- AI Studio Build</h2>
+<p>Extracting valuable information from text is known as Named Entity
+Recognition (NER). Entities are key words that are of interest to you in
+a given text.</p>
+<figure>
+<img src="images/get-started-prompt-flow-use-case.gif"
+alt="Entity extraction" />
+<figcaption aria-hidden="true">Entity extraction</figcaption>
+</figure>
+<p>Large Language Models (LLMs) can be used to perform NER. To create an
+application that takes a text as input and outputs entities, you can
+create a flow that uses a LLM node with prompt flow.</p>
+<p>In this exercise, you’ll use Azure AI Studio’s prompt flow to create
+an LLM application that expects an entity type and text as input. It
+calls a GPT model from Azure OpenAI through a LLM node to extract the
+required entity from the given text, cleans the result and outputs the
+extracted entities.</p>
+<figure>
+<img src="images/get-started-lab.png" alt="Exercise overview" />
+<figcaption aria-hidden="true">Exercise overview</figcaption>
+</figure>
+<p>You first need to create a project in the Azure AI Studio to create
+the necessary Azure resources. Then, you can deploy a GPT model with the
+Azure OpenAI service. Once you have the necessary resources, you can
+create the flow. Finally you’ll run the flow to test it and view the
+<<<<<<< HEAD
+sample output. ### Prompt flow</p>
+<ol type="1">
+<li><p>Click on the <strong>Build</strong> tab in the top navigation</p>
+<figure>
+<img src="images/build1.png" alt="build 1" />
+<figcaption aria-hidden="true">build 1</figcaption>
+</figure></li>
+<li><p>Then click on <strong>Prompt flow</strong> in the navigation</p>
+<figure>
+<img src="images/prompt2.png" alt="prompt 2" />
+<figcaption aria-hidden="true">prompt 2</figcaption>
+</figure></li>
+<li><p>Then click on the <strong>Create</strong> button</p>
+=======
+sample output.</p>
+<h3 id="prompt-flow">Prompt flow</h3>
+<ol type="1">
+<<<<<<< HEAD
+=======
+<li><p>Click the Home button in the top left navigation.</p>
+<p><img src="images/home-button.png" /></p></li>
+<li><p>Click your project from recent projects.</p>
+<p><img src="images/recent-project.png" /></p></li>
+>>>>>>> 862be56e488305ee4344e19bbe5b3ec211401b29
+<li><p>Click <strong>Prompt flow</strong> on the left navigation then
+click <strong>+ Create</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/createprompt.png" alt="createprompt" />
+<figcaption aria-hidden="true">createprompt</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the popup click on <strong>Create</strong> for the
+<strong>Standard flow</strong></p>
+=======
+<li><p>In the dialog that appears, click <strong>Create</strong> under
+<strong>Standard flow</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/standard.png" alt="standard" />
+<figcaption aria-hidden="true">standard</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the popup leave the defaults and click
+<strong>Create</strong></p>
+=======
+<li><p>In the <strong>Create a new flow</strong> pane that appears,
+change the <strong>Folder name</strong> to
+<strong>entity-recognition</strong> and click
+<strong>Create</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/createeval.png" alt="createeval" />
+<figcaption aria-hidden="true">createeval</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Rename the flow, by clicking the pencil icon, to
+<code>entity-recognition</code></p>
+<figure>
+<img src="images/rename.png" alt="rename" />
+<figcaption aria-hidden="true">rename</figcaption>
+</figure></li>
+=======
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<h3 id="start-the-automatic-runtime">Start the automatic runtime</h3>
+<p>To test your flow, you need compute. The necessary compute is made
+available to you through the runtime.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li>After creating the new flow that you named
+<code>entity-recognition</code>, the flow should open in the
+studio.</li>
+<li>Select the <strong>Select runtime</strong> field from the top
+bar.</li>
+<li>In the <strong>Automatic runtime</strong> list, select
+<strong>Start</strong> to start the automatic runtime.</li>
+<li>Wait for the runtime to start.</li>
+=======
+<li><p>After creating the new flow that you named
+<code>entity-recognition</code>, the flow should open in the
+studio.</p></li>
+<li><p>Select <strong>Start</strong> in the <strong>Runtime</strong>
+dropdown at the top of the page to start the automatic runtime.</p>
+<figure>
+<img src="images/StartRuntime.png" alt="Start runtime" />
+<figcaption aria-hidden="true">Start runtime</figcaption>
+</figure></li>
+<li><p>Wait a few minutes for the run time to be completed.</p>
+<figure>
+<img src="images/RuntimeComplete2.png" alt="Runtime complete 2" />
+<figcaption aria-hidden="true">Runtime complete 2</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<h3 id="configure-the-inputs">Configure the inputs</h3>
+<p>The flow you’ll create will take two inputs: a text and the type of
+entity you want to extract from the text.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li>Under <strong>Inputs</strong>, one input is configured named
+<code>topic</code> of type <code>string</code>. Change the existing
+input and update with the following settings:
+<ul>
+<li><strong>Name</strong>: <code>entity_type</code></li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Value</strong>: <code>job title</code></li>
+</ul></li>
+<li>Select <strong>Add input</strong>.</li>
+<li>Configure the second input to have the following settings:
+<ul>
+<li><strong>Name</strong>: <code>text</code></li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Value</strong>:
+<code>The software engineer is working on a new update for the application.</code></li>
+</ul></li>
+=======
+<li><p>In the <strong>Inputs</strong> section, enter the following
+information:</p>
+<ul>
+<li><p>Name: <strong>entity_type</strong></p></li>
+<li><p>Type: <strong>string</strong></p></li>
+<li><p>Value: <strong>job title</strong></p></li>
+</ul>
+<figure>
+<img src="images/ETInput.png" alt="Entity type input" />
+<figcaption aria-hidden="true">Entity type input</figcaption>
+</figure></li>
+<li><p>Click <strong>+ Add input</strong>.</p>
+<figure>
+<img src="images/AddInput.png" alt="Add input" />
+<figcaption aria-hidden="true">Add input</figcaption>
+</figure></li>
+<li><p>Enter the following information for the second input.</p>
+<ul>
+<li><p>Name: <strong>text</strong></p></li>
+<li><p>Type: <strong>string</strong></p></li>
+<li><p>Value: <strong>The software engineer is working on a new update
+for the application.</strong></p></li>
+</ul>
+<figure>
+<img src="images/SecondInput.png" alt="Second input" />
+<figcaption aria-hidden="true">Second input</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<h3 id="configure-the-llm-node">Configure the LLM node</h3>
+<p>The standard flow already includes a node that uses the LLM tool. You
+can find the node in your flow overview. The default prompt asks for a
+joke. You’ll update the LLM node to extract entities based on the two
+inputs specified in the previous section.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li><p>Navigate to the <strong>LLM node</strong> named
+<code>joke</code>.</p></li>
+<li><p>Replace the name with <code>NER_LLM</code></p></li>
+<li><p>For <strong>Connection</strong>, select the OpenAI connection
+previously created.</p></li>
+<li><p>For <strong>deployment_name</strong>, select the
+<code>gpt-35-turbo</code> model you deployed.</p></li>
+<li><p>Replace the prompt field with the following code:</p>
+=======
+<li><p>Select the LLM node, <strong>Joke</strong>, on the right
+pane.</p>
+<figure>
+<img src="images/SelectJoke.png" alt="Select Joke" />
+<figcaption aria-hidden="true">Select Joke</figcaption>
+</figure></li>
+<li><p>Click the pencil icon then replace the text with
+<<<<<<< HEAD
+<strong>NER_LLM</strong> and press <strong>Enter</strong> to rename the
+=======
+<strong>NERLLM</strong> and press <strong>Enter</strong> to rename the
+>>>>>>> 862be56e488305ee4344e19bbe5b3ec211401b29
+node.</p>
+<figure>
+<img src="images/Rename1.png" alt="Rename" />
+<figcaption aria-hidden="true">Rename</figcaption>
+</figure>
+<figure>
+<img src="images/Rename2.png" alt="Rename" />
+<figcaption aria-hidden="true">Rename</figcaption>
+</figure></li>
+<li><p>In the <strong>Connection</strong> dropdown, select the OpenAI
+connection created earlier in the lab.</p>
+<figure>
+<img src="images/SelectConnection.png" alt="Select connection" />
+<figcaption aria-hidden="true">Select connection</figcaption>
+</figure></li>
+<li><p>In the <strong>deployment_name</strong> dropdown, select the
+<strong>gpt-35-turbo</strong> model deployed earlier in the lab.</p>
+<figure>
+<img src="images/SelectDeploymentName.png"
+alt="Select deployment name" />
+<figcaption aria-hidden="true">Select deployment name</figcaption>
+</figure></li>
+<li><p>Replace the contents of the <strong>Prompt</strong> field with
+the following. Then click <strong>Validate and parse input</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<pre class="yml"><code># system:
+
+ Your task is to find entities of a certain type from the given text content.
+ If there&#39;re multiple entities, please return them all with comma separated, e.g. &quot;entity1, entity2, entity3&quot;.
+ You should only return the entity list, nothing else.
+ If there&#39;s no such entity, please return &quot;None&quot;.
+
+ # user:
+ Entity type: {{entity_type}}
+<<<<<<< HEAD
+ Text content: {{text}}</code></pre></li>
+<li><p>Select <strong>Validate and parse input</strong>.</p></li>
+<li><p>Within the LLM node, in the <strong>Inputs</strong> section,
+configure the following:</p>
+<ul>
+<li>For <code>entity_type</code>, select the value
+<code>${inputs.entity_type}</code>.</li>
+<li>For <code>text</code>, select the value
+<code>${inputs.text}</code>.</li>
+</ul></li>
+=======
+ Text content: {{text}}</code></pre>
+<figure>
+<img src="images/NewPrompt.png" alt="Prompt" />
+<figcaption aria-hidden="true">Prompt</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the <strong>NET_LLM</strong> section, under
+=======
+<li><p>In the <strong>NETLLM</strong> section, under
+>>>>>>> 862be56e488305ee4344e19bbe5b3ec211401b29
+<strong>Inputs</strong>, enter the following information.</p>
+<ul>
+<li><p>entity_type: <strong>${inputs.entity_type}</strong></p></li>
+<li><p>text: <strong>${inputs.text}</strong></p></li>
+</ul>
+<figure>
+<img src="images/NodeInputs.png" alt="Node Inputs" />
+<figcaption aria-hidden="true">Node Inputs</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<p>Your LLM node will now take the entity type and text as inputs,
+include it in the prompt you specified and send the request to your
+deployed model.</p>
+<h3 id="configure-the-python-node">Configure the Python node</h3>
+<p>To extract only the key information from the result of the model, you
+can use the Python tool to clean up the output of the LLM node.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li><p>Navigate to the Python node named <code>echo</code>.</p></li>
+<li><p>Replace the name with <code>cleansing</code>.</p></li>
+<li><p>Replace the code with the following:</p>
+=======
+<li><p>Select the Python node, <strong>echo</strong>, on the right
+pane.</p>
+<figure>
+<img src="images/SelectEcho.png" alt="Select echo" />
+<figcaption aria-hidden="true">Select echo</figcaption>
+</figure></li>
+<li><p>Click the pencil icon then replace the text with
+<strong>cleansing</strong> and press <strong>Enter</strong> to rename
+the node.</p>
+<figure>
+<img src="images/Rename3.png" alt="Rename" />
+<figcaption aria-hidden="true">Rename</figcaption>
+</figure>
+<figure>
+<img src="images/Rename4.png" alt="Rename" />
+<figcaption aria-hidden="true">Rename</figcaption>
+</figure></li>
+<li><p>Replace the contents of the <strong>Code</strong> section with
+the following then click <strong>Validate and parse input</strong>.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<pre class="python"><code>from typing import List
+from promptflow import tool
+
+
+@tool
+def cleansing(entities_str: str) -&gt; List[str]:
+    # Split, remove leading and trailing spaces/tabs/dots
+    parts = entities_str.split(&quot;,&quot;)
+    cleaned_parts = [part.strip(&quot; \t.\&quot;&quot;) for part in parts]
+    entities = [part for part in cleaned_parts if len(part) &gt; 0]
+    return entities
+<<<<<<< HEAD
+</code></pre></li>
+<li><p>Select <strong>Validate and parse input</strong>.</p></li>
+<li><p>Within the Python node, in the <strong>Inputs</strong> section,
+set the value of <code>entities_str</code> to
+<code>${NER_LLM.output}</code>.</p></li>
+=======
+</code></pre>
+<figure>
+<img src="images/ReplaceCode.png" alt="Replace code" />
+<figcaption aria-hidden="true">Replace code</figcaption>
+</figure></li>
+<li><p>In the <strong>Cleansing</strong> section, under
+<strong>Inputs</strong>, enter the following information.</p>
+<ul>
+<li>entities_str: <strong>${NER_LLM.output}</strong></li>
+</ul>
+<figure>
+<img src="images/PythonInput.png" alt="Python input" />
+<figcaption aria-hidden="true">Python input</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<h3 id="configure-the-output">Configure the output</h3>
+<p>Finally, you can configure the output of the whole flow. You only
+want one output to your flow, which should be the extracted
+entities.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li>Navigate to the flow’s <strong>Outputs</strong>.</li>
+<li>For <strong>Name</strong>, enter <code>entities</code>.</li>
+<li>For <strong>Value</strong>, select
+<code>${cleansing.output}</code>.</li>
+<li>Click <strong>Save</strong></li>
+=======
+<li><p>In the <strong>Outputs</strong> section, enter the following
+information then click <strong>Save</strong>.</p>
+<ul>
+<li><p>Name: <strong>entities</strong></p></li>
+<li><p>Value: <strong>${cleansing.output}</strong></p></li>
+</ul>
+<figure>
+<img src="images/FlowOutput2.png" alt="Flow output" />
+<figcaption aria-hidden="true">Flow output</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+<h3 id="run-the-flow">Run the flow</h3>
+<p>Now that you’ve developed the flow, you can run it to test it. Since
+you’ve added default values to the inputs, you can easily test the flow
+in the studio.</p>
+<ol type="1">
+<<<<<<< HEAD
+<li><p>Select <strong>Run</strong> to test the flow.</p></li>
+<li><p>Wait until the run is completed.</p></li>
+<li><p>Select <strong>View outputs</strong> in the
+<strong>NEW_LLM</strong>. A pop-up should appear showing you the output
+for the default inputs. Optionally, you can also inspect the logs.</p>
+<figure>
+<img src="images/output1.png" alt="output 1" />
+<figcaption aria-hidden="true">output 1</figcaption>
+=======
+<li><p>Select <strong>Run</strong> to test the flow.</p>
+<figure>
+<img src="images/RunFlow.png" alt="Run" />
+<figcaption aria-hidden="true">Run</figcaption>
+</figure></li>
+<li><p>Wait until the run is completed.</p>
+<figure>
+<img src="images/RunComplete1.png" alt="Run complete" />
+<figcaption aria-hidden="true">Run complete</figcaption>
+</figure></li>
+<li><p>Select <strong>View full output</strong> in the
+<<<<<<< HEAD
+<strong>NER_LLM</strong> section. A dialog should appear showing you the
+=======
+<strong>NERLLM</strong> section. A dialog should appear showing you the
+>>>>>>> 862be56e488305ee4344e19bbe5b3ec211401b29
+output for the default inputs. Optionally, you can also inspect the
+logs.</p>
+<figure>
+<img src="images/output1.png" alt="output 1" />
+<figcaption aria-hidden="true">output 1</figcaption>
+</figure>
+<figure>
+<img src="images/output2.png" alt="output 2" />
+<figcaption aria-hidden="true">output 2</figcaption>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</figure></li>
+</ol>
+</body>
+</html>

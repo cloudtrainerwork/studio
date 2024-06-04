@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-3--ai-studio-explore">Exercise 3- AI Studio
+Explore</h2>
+<h3 id="model-catalog">Model catalog</h3>
+<ol type="1">
+<<<<<<< HEAD
+<li><p>Click on the <strong>Explore</strong> tab in the navigation</p>
+=======
+<li><p>Click <strong>Explore</strong> towards the top of the page.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/explore.png" alt="explore" />
+<figcaption aria-hidden="true">explore</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>The resulting model catalog. You will notice this is vastly
+different than the 4-5 models available in the current AI Studio.</p>
+=======
+<li><p>You will see the resulting model catalog. You will notice this is
+vastly different than the 4-5 models available in the current AI
+Studio.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/models2.png" alt="models 2" />
+<figcaption aria-hidden="true">models 2</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Click on the <strong>Hugging Face</strong> icon</p>
+<figure>
+<img src="images/huggingface.png" alt="huggingface" />
+<figcaption aria-hidden="true">huggingface</figcaption>
+</figure></li>
+<li><p>Hugging Face has over 600,000 models available
+https://huggingface.co/.</p></li>
+<li><p>After filtering to Hugging Face models click on the
+<strong>Inference tasks</strong> dropdown and choose
+=======
+<li><p>Click <strong>Show filters</strong> then click the
+<strong>Hugging Face</strong> icon.</p>
+<figure>
+<img src="images/ShowFilters.png" alt="Show filters" />
+<figcaption aria-hidden="true">Show filters</figcaption>
+</figure>
+<figure>
+<img src="images/huggingface.png" alt="huggingface" />
+<figcaption aria-hidden="true">huggingface</figcaption>
+</figure>
+<blockquote>
+<p><strong>Note:</strong> Hugging Face has over 600,000 models available
+https://huggingface.co/.</p>
+</blockquote></li>
+<li><p>After filtering for Hugging Face models click the
+<strong>Inference tasks</strong> dropdown and select
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<strong>Conversational</strong></p>
+<figure>
+<img src="images/conversational.png" alt="conversational" />
+<figcaption aria-hidden="true">conversational</figcaption>
+</figure></li>
+<li><p>Look for the <strong>facebook-blenderbot-400m…</strong> and
+<<<<<<< HEAD
+select it</p>
+=======
+select it.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/facebook.png" alt="facebook" />
+<figcaption aria-hidden="true">facebook</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>It should throw an error at the top</p>
+=======
+<li><p>You should see an error message that says <strong>Failed to parse
+artifact data</strong> at the top of the page.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/error.png" alt="error" />
+<figcaption aria-hidden="true">error</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Click the breadcrumb that says <strong>Model catalog</strong></p>
+=======
+<li><p>Click <strong>Model catalog</strong> at the top of the page.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/model3.png" alt="model 3" />
+<figcaption aria-hidden="true">model 3</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>This time click on the <strong>Microsoft</strong> collection</p>
+=======
+<li><p>This time click the <strong>Microsoft</strong> collection</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/Microsofticon.png" alt="Microsofticon" />
+<figcaption aria-hidden="true">Microsofticon</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Select the <strong>microsoft-phi-2</strong> model and review the
+details about the model</p>
+=======
+<li><p>Select the <strong>microsoft-phi-2</strong> model.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/phi2.png" alt="phi 2" />
+<figcaption aria-hidden="true">phi 2</figcaption>
+</figure></li>
+<<<<<<< HEAD
+</ol>
+<p>1.On the <strong>Details</strong> page review the
+<strong>Description</strong> section. the scroll down to the
+<strong>Sample</strong> section</p>
+<ol type="1">
+<li><p>At the top of the page click on the <strong>Deploy</strong>
+button</p>
+=======
+<li><p>On the <strong>microsoft-phi-2</strong> page, view the
+<strong>Description</strong> section then scroll down to the
+<strong>Sample inputs and outputs (for real-time inference)</strong>
+section.</p></li>
+<li><p>At the top of the page, click <strong>Deploy</strong> button.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/deploy.png" alt="deploy" />
+<figcaption aria-hidden="true">deploy</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>In the <strong>Deploy model</strong> popup make sure the project
+previously created is selected. And the click the <strong>Shared
+quota</strong> notification</p>
+=======
+<li><p>In the <strong>Deploy model</strong> dialog, select the
+<strong>democopilot…</strong> project created earlier in the lab. Check
+the <strong>I want to use shared quota…</strong> box.</p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/deploymodel.png" alt="deploymodel" />
+<figcaption aria-hidden="true">deploymodel</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>The popup will update to display the <strong>Virtual
+machine</strong> options</p>
+<figure>
+<img src="images/vmoptions.png" alt="vmoptions" />
+<figcaption aria-hidden="true">vmoptions</figcaption>
+</figure></li>
+<li><p>In the bottom section you can adjust the <strong>Endpoint
+name</strong> and the <strong>Deployment name</strong></p>
+=======
+<li><p>The dialog will update to display the <strong>Virtual
+machine</strong> options. In the bottom section you can adjust the
+<strong>Endpoint name</strong> and the <strong>Deployment
+name</strong></p>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+<figure>
+<img src="images/enddeployname.png" alt="enddeployname" />
+<figcaption aria-hidden="true">enddeployname</figcaption>
+</figure></li>
+<<<<<<< HEAD
+<li><p>Click <strong>Cancel</strong> in the popup before
+deploying</p></li>
+=======
+<li><p><strong>Important: Do Not deploy - click </strong>Cancel** in the
+dialog.</p>
+<figure>
+<img src="images/CancelDeployModel.png" alt="Cancel Deploy Model" />
+<figcaption aria-hidden="true">Cancel Deploy Model</figcaption>
+</figure></li>
+>>>>>>> b98290478187d01081da045c0adb6a52dc30cc29
+</ol>
+</body>
+</html>
