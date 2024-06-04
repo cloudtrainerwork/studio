@@ -1,0 +1,25 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Search/searchServices"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "field": "Microsoft.Search/searchServices/sku.name",
+                "in": ["Basic", "S1"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+  
+  

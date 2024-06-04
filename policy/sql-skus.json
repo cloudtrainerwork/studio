@@ -1,0 +1,57 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.SQL/servers/databases"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "field": "Microsoft.SQL/servers/databases/requestedServiceObjectiveName",
+                "in": [
+                  "Basic",
+                  "S0",
+                  "S1",
+                  "S2",
+                  "S3",
+                  "S4",
+                  "S6",
+                  "P1",
+                  "P2",
+                  "P4",
+                  "GP_Gen4_1",
+                  "GP_S_Gen5_1",
+                  "GP_Gen4_2",
+                  "GP_Gen5_2",
+                  "GP_S_Gen5_2",
+                  "GP_Gen4_3",
+                  "GP_Gen4_4",
+                  "GP_Gen5_4",
+                  "GP_S_Gen5_4",
+                  "BC_Gen4_1",
+                  "BC_Gen4_2",
+                  "BC_Gen5_2",
+                  "BC_Gen4_3",
+                  "BC_Gen4_4",
+                  "BC_Gen5_4",
+                  "HS_Gen4_1",
+                  "HS_Gen4_2",
+                  "HS_Gen5_2",
+                  "HS_Gen4_3",
+                  "HS_Gen4_4",
+                  "HS_Gen5_4"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+  
+  

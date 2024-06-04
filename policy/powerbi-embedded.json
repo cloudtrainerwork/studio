@@ -1,0 +1,25 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.PowerBI/workspaceCollections"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "field": "Microsoft.PowerBI/workspaceCollections/sku.name",
+                "in": ["A1", "A2", "A3","A4"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+  
+  

@@ -1,0 +1,26 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Devices/IoTHubs"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "field": "Microsoft.Devices/IoTHubs/sku.name",
+                "in": ["S1", "S2"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+  
+  
+

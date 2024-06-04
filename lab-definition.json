@@ -1,0 +1,60 @@
+{
+  "LabName": "ai-studio",
+  "LabConfiguration": {
+    "Type": "Azure",
+    "AzureRole": "Owner",
+    "ShowAzureSubscription": "true",
+    "UseCoronaPlayer": "true",
+    "SubscriptionPool": "AzureAIStudioEnabled",
+    "AzureADRoles": [
+        "Global Administrator",
+        "Company Administrator"
+    ],    
+    "RuntimeMinutes": 480,
+    "MonitorForPolicyChanges": false,
+    "AzurePolicies": [
+      {
+        "Name": "image-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/image-policy.json"
+      },
+      {
+        "Name": "iot-hubs-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/iot-hubs.json"
+      },
+      {
+        "Name": "powerbi-embedded",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/powerbi-embedded.json"
+      },
+      {
+        "Name": "restrict-express-route-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/restrict-express-route.json"
+      },
+      {
+        "Name": "restrict-reservations-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/restrict-reservations.json"
+      },
+      {
+        "Name": "sql-skus-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/sql-skus.json"
+      },
+      {
+        "Name": "vm-instance-size-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/vm-instance-size.json"
+      },
+      {
+        "Name": "vm-ss-instance-size-policy",
+        "Url": "https://github.com/opsgility/labs/blob/master/ai-studio-2024/policy/vm-ss-instance-size.json"
+      }
+    ]
+  },
+  "AzureResourceConfiguration": [
+  ],
+  "VirtualMachinesToDisplay": [
+    {
+      "Name": "LABVM",
+      "Description": "Lab Virtual Machine",
+      "VMPool": "WindowsPool",
+      "ConnectionType": "RDP"
+    }
+  ]
+}

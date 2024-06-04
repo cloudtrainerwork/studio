@@ -1,0 +1,57 @@
+{
+    "Title": "ai-studio",
+    "Description" : "ai-studio",
+    "OverviewUrl" : "Overview.html",
+    "ContentVersion": "1.1",
+    "ContentPackage": {
+      "ContentItems": [
+        {
+          "Order": 1,
+          "Title": "Exercise 1:",
+          "Description": "Exercise 1:",
+          "Url": "Exercise 1.html",
+          "TimeEstimateMinutes": 45
+        },
+        {
+          "Order": 2,
+          "Follows": 1,
+          "Title": "Exercise 2:",
+          "Description": "Exercise 2:",
+          "Url": "Exercise 2.html",
+          "TimeEstimateMinutes": 30
+        },
+        {
+          "Order": 3,
+          "Follows": 2,
+          "Title": "Exercise 3:",
+          "Description": "Exercise 3:",
+          "Url": "Exercise 3.html",
+          "TimeEstimateMinutes": 30
+        },
+        {
+          "Order": 4,
+          "Follows": 3,
+          "Title": "Exercise 4: ",
+          "Description": "Exercise 4: .",
+          "Url": "Exercise 4.html",
+          "TimeEstimateMinutes": 30
+        },
+        {
+          "Order": 5,
+          "Follows": 4,
+          "Title": "Exercise 5:",
+          "Description": "Exercise 5:",
+          "Url": "Exercise 5.html",
+          "TimeEstimateMinutes": 30
+        },
+        {
+          "Order": 6,
+          "Follows": 5,
+          "Title": "Exercise 6:",
+          "Description": "Exercise 6:",
+          "Url": "Exercise 6.html",
+          "TimeEstimateMinutes": 30
+        }
+      ]
+    }
+  }

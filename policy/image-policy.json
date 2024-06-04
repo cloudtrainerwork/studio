@@ -1,0 +1,76 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "Microsoft*"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "Canonical*"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "CoreOS*"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "OpenLogic*"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "Debian*"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "like": "SUSE*"
+                  }
+                ]
+              },                         
+              {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "exists": false
+                  }
+                ]
+              }              
+            ]
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+  
